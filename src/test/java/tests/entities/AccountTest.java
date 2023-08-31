@@ -33,4 +33,19 @@ public class AccountTest {
         //assert
         Assertions.assertEquals(expectedValue, acc.getBalance());
     }
+
+    @Test
+    public void depositShouldFullWithDrawAndReturnFullBalance() {
+        //Arrange
+        double initialBalance = 800.0;
+        double expectedValue = 0.0;
+        Account acc = AccountFactory.createAccount(initialBalance);
+
+        //Act
+        double result = acc.fullWithDraw();
+
+        //Assert
+        Assertions.assertTrue(expectedValue == acc.getBalance());
+        Assertions.assertTrue(result == initialBalance);
+    }
 }
