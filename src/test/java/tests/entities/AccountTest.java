@@ -59,4 +59,17 @@ public class AccountTest {
         //Assert
         Assertions.assertEquals( expectedValue, acc.getBalance());
     }
+    @Test
+    public void withdrawShouldThrowExceptionWhenInsufficientBalance() {
+        //Assert
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            //Arrange
+            double initialBalance = 500;
+            double expectedValue = -300;
+            Account acc = AccountFactory.createAccount(initialBalance);
+
+            //Act
+            acc.withdraw(800.0);
+        });
+    }
 }
