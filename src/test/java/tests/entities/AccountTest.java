@@ -19,7 +19,6 @@ public class AccountTest {
         //Assert
         Assertions.assertEquals(expectedValue, acc.getBalance());
     }
-
     @Test
     public void depositShouldDoNothingWhenNegativeAmmount() {
         //Arrange
@@ -33,9 +32,8 @@ public class AccountTest {
         //assert
         Assertions.assertEquals(expectedValue, acc.getBalance());
     }
-
     @Test
-    public void depositShouldFullWithDrawAndReturnFullBalance() {
+    public void depositShouldFullWithdrawAndReturnFullBalance() {
         //Arrange
         double initialBalance = 800.0;
         double expectedValue = 0.0;
